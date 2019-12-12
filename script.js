@@ -1,46 +1,129 @@
 
-//array of password length 
-var PassLength = []
+//ask prompt User question 
+
+var Userinput;
+var UserLength = prompt("what length is the password?");
+var UserSpecialChar = confirm("does it contain special character?");
+var UserLowerCase = confirm("does it contain Lower case " );
+var userUpperCase = confirm("does it contain Upper case ");
 
 
-//prompt for password length 
-varPassword = prompt ("what length is the password?")
-if 
+// // Get arrays
+// var num = [1,2,3,4,5,6,7,8,9,0];
+// var lower_alphabets= ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+// var char = ['@' ,'#','$','%','^','&','*','()','{}','[',']','=','<','>','/',','];
+// var upper_alphabets = ['A','B','C','D','E','F','G,'H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
-//alert for special character
-varSpecialChar = confirm ("Would you like to use a special character")
+//Functions
 
-//alert for lower case
-varLowerCase = confirm ("Would you like to use a lower Case letter?")
+function UpperCase(length) {
 
-//alert for upper case
-varUpperCase = confirm ("Would you like to use a Upper case letter?")
+    var result           = '';
+ 
+    var Uppercharacters  = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+ 
+    var charactersLength = characters.length;
+ 
+    for ( var i = 0; i < length; i++ ) {
+ 
+       result += characters.charAt(Math.floor(Math.random() * charactersLength));
+ 
+    }
+ 
+    return result;
+ 
+ }
+
+ function lowerCase(length) {
+
+    var result           = '';
+ 
+    var Lowercharacters       = 'abcdefghijklmnopqrstuvwxyz';
+ 
+    var charactersLength = characters.length;
+ 
+    for ( var i = 0; i < length; i++ ) {
+ 
+       result += characters.charAt(Math.floor(Math.random() * charactersLength));
+ 
+    }
+ 
+    return result;
+ 
+ }
+ 
+  
+ 
+ function makeNum(length) {
+ 
+    var result           = '';
+ 
+    var characters       = '0123456789';
+ 
+    var charactersLength = characters.length;
+ 
+    for ( var i = 0; i < length; i++ ) {
+ 
+       result += characters.charAt(Math.floor(Math.random() * charactersLength));
+ 
+    }
+ 
+    return result;
+ 
+ }
+ 
+  
+ 
+ function makeSC(length) {
+ 
+    var result           = '';
+ 
+    var characters       = '!@#$%^&*():;"?/<>,.';
+ 
+    var charactersLength = characters.length;
+ 
+    for ( var i = 0; i < length; i++ ) {
+ 
+       result += characters.charAt(Math.floor(Math.random() * charactersLength));
+ 
+    }
+ 
+    return result;
+ 
+ }
+ 
+ function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+    var generateBtn = document.querySelector("#generate");
+
+    //array of password length 
+    var PassLength = 0
+    passwordText.value = password;
+
+ }
 
 
+// // Write password to the #password input
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
 
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+//   passwordText.value = password;
 
+//   copyBtn.removeAttribute("disabled");
+//   copyBtn.focus();
+// }
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+// function copyToClipboard() {
+//   // BONUS 
+// }
 
-  passwordText.value = password;
+// // Add event listener to generate button
+// generateBtn.addEventListener("click", writePassword);
 
-  copyBtn.removeAttribute("disabled");
-  copyBtn.focus();
-}
+// // BONUS EVENT LISTENER 
 
-function copyToClipboard() {
-  // BONUS 
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-// BONUS EVENT LISTENER 
 
 
 
